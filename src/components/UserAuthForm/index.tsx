@@ -90,10 +90,9 @@ export function UserAuthForm({
               callbackUrl: baseCallBackUrl,
             })
               .then((res) => {
-                console.log(res);
-              })
-              .catch((err) => {
-                console.log(err);
+                if(res?.error){
+                  throw new Error('邮件认证错误')
+                }
               })
               .finally(() => {
                 processRef.current = false;
