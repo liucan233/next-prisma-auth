@@ -26,7 +26,7 @@ export const nextAuthOptions:NextAuthOptions={
   session: {
     strategy: "jwt",
   },
-  secret: "23333",
+  secret: process.env.NEXTAUTH_SECRET,
 }
 
 const handler = NextAuth(nextAuthOptions);
